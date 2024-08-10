@@ -1,0 +1,8 @@
+<div *ngIf="appointment">
+  <h2>Appointment Details</h2>
+  <p><strong>Patient Name:</strong> {{ appointment.patient?.firstName }} {{ appointment.patient?.lastName }}</p>
+  <p><strong>Date:</strong> {{ appointment.dateTime | date: 'yyyy-MM-dd' }}</p>
+  <p><strong>Time:</strong> {{ appointment.dateTime | date: 'shortTime' }}</p>
+  <p><strong>Phone Number:</strong> {{ appointment.patient?.phoneNumber }}</p>
+  <p><strong>ID Number:</strong> {{ appointment.patient?.identificationNo }}</p>
+</div>
