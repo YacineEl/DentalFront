@@ -1,1 +1,37 @@
-<p>patient-details works!</p>
+<div class="container">
+  <div class="row">
+    <div class="col-xs-12">
+      <h2>Patient Details</h2>
+    </div>
+  </div>
+  <div class="row">
+    <div class="col">
+      <p><strong>First Name:</strong> {{ patientToDisplay?.firstName || 'N/A' }}</p>
+      <p><strong>Last Name:</strong> {{ patientToDisplay?.lastName || 'N/A' }}</p>
+      <p>
+        <strong>Date of Birth:</strong>
+        {{ patientToDisplay?.dateOfBirth ? (patientToDisplay?.dateOfBirth | date) : 'N/A' }}
+      </p>
+      <p><strong>Gender:</strong> {{ patientToDisplay?.gender || 'N/A' }}</p>
+      <p><strong>Phone Number:</strong> {{ patientToDisplay?.phoneNumber || 'N/A' }}</p>
+      <p><strong>Address:</strong> {{ patientToDisplay?.address || 'N/A' }}</p>
+      <p><strong>Identification No.:</strong> {{ patientToDisplay?.identificationNo || 'N/A' }}</p>
+      <p><strong>Notes:</strong> {{ patientToDisplay?.notes || 'N/A' }}</p>
+      <p><strong>Allergies:</strong> {{ patientToDisplay?.hasAllergies ? 'Yes' : 'No' }}</p>
+      <p>
+        <strong>Emergency Contact Name:</strong>
+        {{ patientToDisplay?.emergencyContactName || 'N/A' }}
+      </p>
+      <p>
+        <strong>Emergency Contact No.:</strong>
+        {{ patientToDisplay?.emergencyContactNo || 'N/A' }}
+      </p>
+      <p>
+        <button class="btn btn-primary" (click)="editPatient()">Edit Patient</button>
+      </p>
+      <p>
+        <button class="btn btn-primary" (click)="viewAppointments()">View Appointments</button>
+      </p>
+    </div>
+  </div>
+</div>

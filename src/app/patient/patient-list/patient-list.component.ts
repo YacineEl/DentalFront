@@ -1,8 +1,7 @@
-import {Component, AfterViewInit, ViewChild, OnInit} from '@angular/core';
-import { MatPaginator } from '@angular/material/paginator';
-import { MatTableDataSource } from '@angular/material/table';
+import {Component, OnInit} from '@angular/core';
 import { Patient } from '../../models/patient.model';
 import {PatientService} from "../../service/patient.service";
+import {Router} from "@angular/router";
 
 @Component({
   selector: 'app-patient-list',
@@ -12,7 +11,8 @@ import {PatientService} from "../../service/patient.service";
 export class PatientListComponent implements OnInit{
   patients: Patient[] = [];
 
-  constructor(private patientService: PatientService) {
+  constructor(private patientService: PatientService,
+              private route: Router) {
   }
 
   ngOnInit(){
@@ -20,6 +20,12 @@ export class PatientListComponent implements OnInit{
   }
 
   loadPatients():void{
-    this.patientService.getPatients().subscribe(patients => this.patients = patients);
+    this.patientService.getPatients().subscribe(patients => {
+      this.patients = patients
+      console.table(patients);
+    });
+  }
+  onAddPatient(){
+    this.route.navigate(['/create-patient'])
   }
 }

@@ -1,8 +1,8 @@
-
-  <td>{{ appointment.dateTime | date : "yyyy-MM-dd"}}</td>
-  <td>{{ appointment.dateTime | date: 'shortTime' }}</td>
-  <td>{{ appointment.patient?.firstName }} {{ appointment.patient?.lastName }}</td>
-  <td>
-    <button (click)="viewDetails()">View Details</button>
-  </td>
+<td>{{ appointment.patient?.firstName }} {{ appointment.patient?.lastName }}</td>
+<td>{{ appointment.dateTime | date : "yyyy-MM-dd"}}</td>
+<td>{{ appointment.dateTime | date: 'shortTime' }}</td>
+<td>{{ appointment.payment ? appointment.payment : 0 }}</td>
+<td>
+  <button (click)="viewDetails()">View Details</button>
+</td>
 

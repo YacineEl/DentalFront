@@ -16,4 +16,11 @@ export class AppointmentService {
     return this.http.get<Appointment[]>(`${this.baseUrl}`);
   }
 
+  createAppointment(appointment: Appointment) {
+    return this.http.post<Appointment>(`${this.baseUrl}`, appointment);
+  }
+
+  getAppointmentsByPatientId(id: string) {
+    return this.http.get<Appointment[]>(`${this.baseUrl}/patient/${id}`);
+  }
 }

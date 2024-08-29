@@ -6,16 +6,6 @@ import { AppComponent } from './app.component';
 import { PatientItemComponent } from './patient/patient-item/patient-item.component';
 import { PatientListComponent } from './patient/patient-list/patient-list.component';
 import { provideAnimationsAsync } from '@angular/platform-browser/animations/async';
-import {
-  MatCell,
-  MatCellDef,
-  MatColumnDef,
-  MatHeaderCell,
-  MatHeaderCellDef,
-  MatHeaderRow, MatHeaderRowDef, MatRow, MatRowDef,
-  MatTable
-} from "@angular/material/table";
-import {MatPaginator} from "@angular/material/paginator";
 import { PatientDetailsComponent } from './patient/patient-details/patient-details.component';
 import { AppointmentDetailsComponent } from './appointment/appointment-details/appointment-details.component';
 import { AppointmentItemComponent } from './appointment/appointment-item/appointment-item.component';
@@ -25,6 +15,16 @@ import {HttpClientModule} from "@angular/common/http";
 import { HeaderComponent } from './template/header/header.component';
 import { SidebarComponent } from './template/sidebar/sidebar.component';
 import { FooterComponent } from './template/footer/footer.component';
+import { CreatePatientComponent } from './patient/create-patient/create-patient.component';
+import { CreateAppointmentComponent } from './appointment/create-appointment/create-appointment.component';
+import { HomeComponent } from './template/home/home.component';
+import {FullCalendarModule} from "@fullcalendar/angular";
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import {RecurrenceEditorModule, ScheduleModule} from "@syncfusion/ej2-angular-schedule";
+
+import { DayService, WeekService, WorkWeekService, MonthService, MonthAgendaService } from "@syncfusion/ej2-angular-schedule";
+import {DashboardComponent} from "./template/dashboard/dashboard.component";
+import { UpdatePatientComponent } from './patient/update-patient/update-patient.component';
 
 @NgModule({
   declarations: [
@@ -37,27 +37,28 @@ import { FooterComponent } from './template/footer/footer.component';
     AppointmentListComponent,
     HeaderComponent,
     SidebarComponent,
-    FooterComponent
+    FooterComponent,
+    CreatePatientComponent,
+    CreateAppointmentComponent,
+    HomeComponent,
+    DashboardComponent,
+    HomeComponent,
+    UpdatePatientComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
-    MatTable,
-    MatCell,
-    MatCellDef,
-    MatColumnDef,
-    MatHeaderCell,
-    MatHeaderCellDef,
-    MatHeaderRow,
-    MatHeaderRowDef,
-    MatRow,
-    MatRowDef,
-    MatPaginator,
-    HttpClientModule
+    HttpClientModule,
+    ReactiveFormsModule,
+    FullCalendarModule,
+    FormsModule,
+    ReactiveFormsModule,
+    ScheduleModule, RecurrenceEditorModule
   ],
   providers: [
     provideAnimationsAsync(),
-    PatientService
+    PatientService,
+    DayService, WeekService, WorkWeekService, MonthService, MonthAgendaService
   ],
   bootstrap: [AppComponent]
 })
