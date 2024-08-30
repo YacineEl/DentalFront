@@ -4,12 +4,12 @@ export class Appointment {
   id?: number;
   dateTime?: Date;
   patient?: Patient;
-  payment?: Number;
+  isValidated?:boolean;
 
-  constructor(id?: number, dateTime?: Date, patient?: Patient, payment?: Number) {
+  constructor(id?: number, dateTime?: Date, patient?: Patient, isValidated?:boolean) {
     this.id = id;
     this.dateTime = dateTime;
     this.patient = patient;
-    this.payment = payment;
+    this.isValidated= isValidated;
   }
 }

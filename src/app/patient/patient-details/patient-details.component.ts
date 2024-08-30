@@ -32,4 +32,7 @@ export class PatientDetailsComponent implements OnInit {
     this.router.navigate([`/appointments/patient/${id}`]);
   }
 
+  viewPayments() {
+    const id = +this.route.snapshot.paramMap.get('id')!;
+    this.router.navigate([`/payments/patient/${id}`]);  }
 }

@@ -25,6 +25,11 @@ import {RecurrenceEditorModule, ScheduleModule} from "@syncfusion/ej2-angular-sc
 import { DayService, WeekService, WorkWeekService, MonthService, MonthAgendaService } from "@syncfusion/ej2-angular-schedule";
 import {DashboardComponent} from "./template/dashboard/dashboard.component";
 import { UpdatePatientComponent } from './patient/update-patient/update-patient.component';
+import { LayoutComponent } from './template/layout/layout.component';
+import { AppointmentsTodayComponent } from './appointment/appointments-today/appointments-today.component';
+import { PaymentItemComponent } from './payment/payment-item/payment-item.component';
+import { PaymentListComponent } from './payment/payment-list/payment-list.component';
+import { CreatePaymentComponent } from './payment/create-payment/create-payment.component';
 
 @NgModule({
   declarations: [
@@ -43,7 +48,12 @@ import { UpdatePatientComponent } from './patient/update-patient/update-patient.
     HomeComponent,
     DashboardComponent,
     HomeComponent,
-    UpdatePatientComponent
+    UpdatePatientComponent,
+    LayoutComponent,
+    AppointmentsTodayComponent,
+    PaymentItemComponent,
+    PaymentListComponent,
+    CreatePaymentComponent
   ],
   imports: [
     BrowserModule,

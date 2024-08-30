@@ -1,5 +1,6 @@
-import {Component, Input} from '@angular/core';
+import {Component, Input, Output} from '@angular/core';
 import {Appointment} from "../../models/appointment.model";
+import {AppointmentService} from "../../service/appointment.service";
 
 @Component({
   selector: '[app-appointment-item]',
@@ -9,7 +10,13 @@ import {Appointment} from "../../models/appointment.model";
 export class AppointmentItemComponent {
   @Input() appointment!: Appointment;
 
-  viewDetails() {
 
+  constructor(private appointmentService: AppointmentService) {
+  }
+
+  validateAppointment(appointment: Appointment) {
+    appointment.isValidated = true;
+    this.appointmentService.
+    console.log(appointment);
   }
 }
