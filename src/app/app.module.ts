@@ -30,6 +30,16 @@ import { AppointmentsTodayComponent } from './appointment/appointments-today/app
 import { PaymentItemComponent } from './payment/payment-item/payment-item.component';
 import { PaymentListComponent } from './payment/payment-list/payment-list.component';
 import { CreatePaymentComponent } from './payment/create-payment/create-payment.component';
+import { PaymentDialogComponent } from './payment/payment-dialog/payment-dialog.component';
+import {MatDialogActions, MatDialogContent, MatDialogTitle} from "@angular/material/dialog";
+import {MatFormField} from "@angular/material/form-field";
+import {MatLabel} from "@angular/material/form-field";
+import {MatInput} from "@angular/material/input";
+import {MatButton} from "@angular/material/button";
+import {DataTablesModule} from "angular-datatables";
+import {AddAppointmentDialogComponent} from "./appointment/add-appontment-dialog/add-appointment-dialog.component";
+import {MatAutocomplete, MatAutocompleteTrigger, MatOption} from "@angular/material/autocomplete";
+import {MatDatepicker, MatDatepickerInput, MatDatepickerToggle} from "@angular/material/datepicker";
 
 @NgModule({
   declarations: [
@@ -53,7 +63,9 @@ import { CreatePaymentComponent } from './payment/create-payment/create-payment.
     AppointmentsTodayComponent,
     PaymentItemComponent,
     PaymentListComponent,
-    CreatePaymentComponent
+    CreatePaymentComponent,
+    PaymentDialogComponent,
+    AddAppointmentDialogComponent
   ],
   imports: [
     BrowserModule,
@@ -63,7 +75,9 @@ import { CreatePaymentComponent } from './payment/create-payment/create-payment.
     FullCalendarModule,
     FormsModule,
     ReactiveFormsModule,
-    ScheduleModule, RecurrenceEditorModule
+    ScheduleModule, RecurrenceEditorModule, MatDialogTitle, MatFormField, MatDialogActions, MatDialogContent, MatInput, MatButton,
+    DataTablesModule,
+    MatLabel, MatAutocomplete, MatOption, MatDatepickerToggle, MatDatepicker, MatAutocompleteTrigger, MatDatepickerInput
   ],
   providers: [
     provideAnimationsAsync(),

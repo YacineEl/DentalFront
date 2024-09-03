@@ -1,0 +1,27 @@
+.btn-info-light {
+  color: #4c81d2 !important;
+  background: #d0e2f7 !important;
+  border-color: #d0e2f7;
+}
+.btn-info-light:hover {
+  color: #fff !important;
+  background-color: #45aaf2 !important;
+  border-color: #45aaf2;
+}
+
+.btn-info-light:focus,
+.btn-info-light.focus {
+  box-shadow: 0 0 0 2px rgba(7, 116, 248, 0.9);
+}
+
+.toBe {
+  color: inherit;
+  text-decoration: none;
+  cursor: pointer;
+}
+
+.toBe:hover {
+  text-decoration: none;
+  color: inherit;
+}
+

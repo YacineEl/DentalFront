@@ -33,7 +33,7 @@ export class AppointmentService {
     return this.http.get<Appointment[]>(`${this.baseUrl}/d/${formattedDate}`);
   }
 
-  validateAppointment(appointment: Appointment) {
-    return this.http.post<Appointment>(`${this.baseUrl}`, appointment);
+  validateAppointment(id: string | undefined, amount: number){
+    return this.http.put<Appointment>(`${this.baseUrl}/validate/${id}`,amount);
   }
 }

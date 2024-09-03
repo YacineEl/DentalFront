@@ -1,0 +1,79 @@
+h3{
+  text-align: center;
+}
+
+.d-flex {
+  margin-bottom: 15px;
+}
+
+.form-group {
+  margin-right: 10px;
+}
+
+.table {
+  margin-top: 15px;
+}
+
+.pagination {
+  justify-content: center;
+  margin-top: 15px;
+}
+
+.page-item.active .page-link {
+  background-color: #007bff;
+  border-color: #007bff;
+  color: white;
+}
+
+.page-item.disabled .page-link {
+  cursor: not-allowed;
+  color: #6c757d;
+}
+.btn-primary-light {
+  color: #6259ca !important;
+  background: #d0e2f7 !important;
+  border-color: #7054d2;
+}
+.btn-primary-light:hover {
+  color: #fff !important;
+  background-color: #9f6df8 !important;
+  border-color: #45aaf2;
+}
+
+.btn-primary-light:focus,
+.btn-primary-light.focus {
+  box-shadow: 0 0 0 2px rgba(7, 116, 248, 0.9);
+}
+
+/* Pagination */
+.pagination {
+  justify-content: center;
+  margin-top: 15px;
+}
+
+/* Pagination Buttons */
+.page-link {
+  cursor: pointer; /* Ensure the cursor changes to a pointer for clickable items */
+}
+
+/* Hover State */
+.page-item:hover .page-link {
+  background-color: #f8f9fa; /* Light background color on hover */
+  border-color: #dee2e6; /* Border color on hover */
+}
+
+/* Active Page */
+.page-item.active .page-link {
+  background-color: #007bff;
+  border-color: #007bff;
+  color: white;
+}
+
+/* Disabled State */
+.page-item.disabled .page-link {
+  cursor: not-allowed;
+  color: #6c757d;
+  background-color: #e9ecef; /* Background color for disabled state */
+  border-color: #e9ecef; /* Border color for disabled state */
+}
+

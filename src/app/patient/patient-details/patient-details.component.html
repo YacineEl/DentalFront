@@ -1,40 +1,25 @@
 <div class="container">
-  <div class="row">
-    <div class="col-xs-12">
-      <h2>Patient Details</h2>
-    </div>
-  </div>
-  <div class="row">
-    <div class="col">
-      <p><strong>First Name:</strong> {{ patientToDisplay?.firstName || 'N/A' }}</p>
-      <p><strong>Last Name:</strong> {{ patientToDisplay?.lastName || 'N/A' }}</p>
-      <p>
-        <strong>Date of Birth:</strong>
-        {{ patientToDisplay?.dateOfBirth ? (patientToDisplay?.dateOfBirth | date) : 'N/A' }}
-      </p>
-      <p><strong>Gender:</strong> {{ patientToDisplay?.gender || 'N/A' }}</p>
-      <p><strong>Phone Number:</strong> {{ patientToDisplay?.phoneNumber || 'N/A' }}</p>
-      <p><strong>Address:</strong> {{ patientToDisplay?.address || 'N/A' }}</p>
-      <p><strong>Identification No.:</strong> {{ patientToDisplay?.identificationNo || 'N/A' }}</p>
-      <p><strong>Notes:</strong> {{ patientToDisplay?.notes || 'N/A' }}</p>
-      <p><strong>Allergies:</strong> {{ patientToDisplay?.hasAllergies ? 'Yes' : 'No' }}</p>
-      <p>
-        <strong>Emergency Contact Name:</strong>
-        {{ patientToDisplay?.emergencyContactName || 'N/A' }}
-      </p>
-      <p>
-        <strong>Emergency Contact No.:</strong>
-        {{ patientToDisplay?.emergencyContactNo || 'N/A' }}
-      </p>
-      <p>
-        <button class="btn btn-primary" (click)="editPatient()">Edit Patient</button>
-      </p>
-      <p>
-        <button class="btn btn-primary" (click)="viewAppointments()">View Appointments</button>
-      </p>
-      <p>
-        <button class="btn btn-primary" (click)="viewPayments()">View Payments</button>
-      </p>
+  <div class="row justify-content-center">
+    <div class="card text-center col-md-6 mx-auto">
+      <div class="card-header">
+        {{ patientToDisplay?.firstName || 'N/A' }} {{ patientToDisplay?.lastName || 'N/A' }}
+      </div>
+      <div class="card-body">
+        <p class="card-text"><strong>Identification No°:</strong> {{ patientToDisplay?.identificationNo || 'N/A' }}</p>
+        <p class="card-text"><strong>Date of Birth:</strong> {{ patientToDisplay?.dateOfBirth ? (patientToDisplay?.dateOfBirth | date) : 'N/A' }}</p>
+        <p class="card-text"><strong>Gender:</strong> {{ patientToDisplay?.gender || 'N/A' }}</p>
+        <p class="card-text"><strong>Phone Number:</strong> {{ patientToDisplay?.phoneNumber || 'N/A' }}</p>
+        <p class="card-text"><strong>Address:</strong> {{ patientToDisplay?.address || 'N/A' }}</p>
+        <p class="card-text"><strong>Notes:</strong> {{ patientToDisplay?.notes || 'N/A' }}</p>
+        <p class="card-text"><strong>Allergies:</strong> {{ patientToDisplay?.hasAllergies ? 'Yes' : 'No' }}</p>
+        <p class="card-text"><strong>Emergency Contact Name:</strong> {{ patientToDisplay?.emergencyContactName || 'N/A' }}</p>
+        <p class="card-text"><strong>Emergency Contact No.:</strong> {{ patientToDisplay?.emergencyContactNo || 'N/A' }}</p>
+      </div>
+      <div class="card-footer text-muted">
+        <button class="btn btn-outline-primary mx-2" (click)="editPatient()">Edit Patient</button>
+        <button class="btn btn-outline-primary mx-2" (click)="viewAppointments()">View Appointments</button>
+        <button class="btn btn-outline-primary mx-2" (click)="viewPayments()">View Payments</button>
+      </div>
     </div>
   </div>
 </div>

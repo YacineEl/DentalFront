@@ -1,9 +1,9 @@
-<td>{{ appointment.patient?.firstName }} {{ appointment.patient?.lastName }}</td>
+<td> <a class="toBe" (click)="OnPatientClick()"> {{ appointment.patient?.firstName }} {{ appointment.patient?.lastName }}</a> </td>
 <td>{{ appointment.dateTime | date : "yyyy-MM-dd"}}</td>
 <td>{{ appointment.dateTime | date: 'shortTime' }}</td>
 <td>
-  <button class="btn btn-success"
-          (click)="validateAppointment(appointment)"
+  <button class="btn btn-info-light"
+          (click)="validateAppointment()"
           [disabled]="appointment.isValidated">Validate</button>
 </td>
 
