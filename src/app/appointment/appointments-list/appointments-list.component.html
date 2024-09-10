@@ -1,0 +1,43 @@
+
+<div class="container mt-4">
+  <div class="row row-sm">
+    <div class="col-lg-12">
+      <div class="card">
+
+        <div class="card-header">
+          <h3 class="card-title">Appointments: </h3>
+        </div>
+
+        <div class="card-body">
+          <div class="text-center mb-3">
+            <button class="btn btn-primary-light mb-3" (click)="OnAddAppointmentClick()">Add Appointment</button>
+          </div>
+
+          <div class="table-responsive">
+            <table class="table table-bordered text-nowrap border-bottom">
+              <thead>
+              <tr>
+                <th class="wd-15p border-bottom-0">Patient Name</th>
+                <th class="wd-15p border-bottom-0">Time Slot</th>
+                <th class="wd-15p border-bottom-0">Actions</th>
+              </tr>
+              </thead>
+              <tbody>
+              <tr *ngFor="let timeSlot of timeSlots">
+                <td>
+                  <input type="text" placeholder="Patient Name">
+                </td>
+                <td>{{ timeSlot }}</td>
+                <td>
+                  <button class="btn btn-primary">Book</button><-- too add click event-->
+                </td>
+              </tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </div>
+</div>

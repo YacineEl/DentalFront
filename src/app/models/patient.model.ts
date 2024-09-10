@@ -1,4 +1,5 @@
 import {Appointment} from "./appointment.model";
+import {RiskFactor} from "./risk-factor.model";
 
 export class Patient {
   id: number;
@@ -14,6 +15,7 @@ export class Patient {
   emergencyContactName?: string;
   emergencyContactNo?: string;
   appointments?: Appointment[];
+  riskFactors?: RiskFactor[];
 
   constructor(
     id: number,
@@ -28,7 +30,8 @@ export class Patient {
     identificationNo?: string,
     emergencyContactName?: string,
     emergencyContactNo?: string,
-    appointments?: Appointment[]
+    appointments?: Appointment[],
+    riskFactors?: RiskFactor[]
   ) {
     this.id = id;
     this.firstName = firstName;
@@ -43,6 +46,7 @@ export class Patient {
     this.emergencyContactName = emergencyContactName;
     this.emergencyContactNo = emergencyContactNo;
     this.appointments = appointments;
+    this.riskFactors = riskFactors;
   }
 }
 

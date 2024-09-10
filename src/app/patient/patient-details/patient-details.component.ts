@@ -19,8 +19,11 @@ export class PatientDetailsComponent implements OnInit {
 
   ngOnInit(): void {
     const id = +this.route.snapshot.paramMap.get('id')!;
-    this.patientService.getPatientById(id).subscribe(patient => this.patientToDisplay = patient);
+    this.patientService.getPatientById(id).subscribe(patient => {
+      this.patientToDisplay = patient;
+    });
   }
+
 
   editPatient() {
     const id = +this.route.snapshot.paramMap.get('id')!;
@@ -35,4 +38,6 @@ export class PatientDetailsComponent implements OnInit {
   viewPayments() {
     const id = +this.route.snapshot.paramMap.get('id')!;
     this.router.navigate([`/payments/patient/${id}`]);  }
+
+  protected readonly Patient = Patient;
 }

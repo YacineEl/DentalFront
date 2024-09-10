@@ -1,9 +1,13 @@
-<td> <a class="toBe" (click)="OnPatientClick()"> {{ appointment.patient?.firstName }} {{ appointment.patient?.lastName }}</a> </td>
-<td>{{ appointment.dateTime | date : "yyyy-MM-dd"}}</td>
-<td>{{ appointment.dateTime | date: 'shortTime' }}</td>
-<td>
+<td [ngClass]="{'validated-appointment': appointment.validationStatus}"> <a class="toBe" (click)="OnPatientClick()"> {{ appointment.patient?.firstName }} {{ appointment.patient?.lastName }}</a> </td>
+<td [ngClass]="{'validated-appointment': appointment.validationStatus}">{{ appointment.dateTime | date : "yyyy-MM-dd"}}</td>
+<td [ngClass]="{'validated-appointment': appointment.validationStatus}">{{ appointment.dateTime | date: 'shortTime' }}</td>
+<td [ngClass]="{'validated-appointment': appointment.validationStatus}">
   <button class="btn btn-info-light"
           (click)="validateAppointment()"
-          [disabled]="appointment.isValidated">Validate</button>
+          [disabled]="appointment.validationStatus">Validate
+  </button>
+  <button class="btn btn-info-light"
+          (click)="viewDetails()">Details
+  </button>
 </td>
 

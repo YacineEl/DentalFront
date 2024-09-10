@@ -24,4 +24,6 @@
   text-decoration: none;
   color: inherit;
 }
-
+.validated-appointment {
+  background-color: #f4fdf1 !important;
+}

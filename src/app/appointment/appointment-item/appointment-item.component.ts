@@ -1,4 +1,4 @@
-import {Component, EventEmitter, Input, OnInit, Output} from '@angular/core';
+import {Component, EventEmitter, Input, OnInit, Output, ViewEncapsulation} from '@angular/core';
 import {Appointment} from "../../models/appointment.model";
 import {AppointmentService} from "../../service/appointment.service";
 import {Router} from "@angular/router";
@@ -6,7 +6,7 @@ import {Router} from "@angular/router";
 @Component({
   selector: '[app-appointment-item]',
   templateUrl: './appointment-item.component.html',
-  styleUrl: './appointment-item.component.css'
+  styleUrl: './appointment-item.component.css',
 })
 export class AppointmentItemComponent implements OnInit {
   @Input() appointment!: Appointment;
@@ -17,7 +17,6 @@ export class AppointmentItemComponent implements OnInit {
   }
 
   validateAppointment() {
-    this.appointment.isValidated = true;
     this.updateAppointment.emit(this.appointment);
   }
 
@@ -26,6 +25,15 @@ export class AppointmentItemComponent implements OnInit {
   }
 
   ngOnInit(): void {
+    if (this.appointment) {
+      console.log(this.appointment);
+      console.log('Appointment validation status:', this.appointment.validationStatus);
+    } else {
+      console.error('Appointment is undefined');
+    }
+  }
 
+  viewDetails() {
+    this.route.navigate(['/appointment-details',this.appointment.id]);
   }
 }

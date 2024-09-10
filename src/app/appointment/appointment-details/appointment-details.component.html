@@ -1,8 +1,44 @@
-<div *ngIf="appointment">
-  <h2>Appointment Details</h2>
-  <p><strong>Patient Name:</strong> {{ appointment.patient?.firstName }} {{ appointment.patient?.lastName }}</p>
-  <p><strong>Date:</strong> {{ appointment.dateTime | date: 'yyyy-MM-dd' }}</p>
-  <p><strong>Time:</strong> {{ appointment.dateTime | date: 'shortTime' }}</p>
-  <p><strong>Phone Number:</strong> {{ appointment.patient?.phoneNumber }}</p>
-  <p><strong>ID Number:</strong> {{ appointment.patient?.identificationNo }}</p>
+<div class="container justify-content-center">
+  <!-- Patient Profile Header -->
+  <div class="row mb-4">
+    <div class="card col-4">
+      <div class="card-body">
+        <div class="col-md-6 mb-2">
+          <div class="d-flex align-items-center">
+            <div class="ml-3">
+              <h3>{{ appointment.patient?.firstName }} {{ appointment.patient?.lastName }}</h3>
+              <p><strong>Phone Number:</strong> {{ appointment.patient?.phoneNumber }}</p>
+              <p><strong>ID Number:</strong> {{ appointment.patient?.identificationNo }}</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="card col-4 mb-2">
+        <h4>Appointment Details</h4>
+        <p><strong>Date:</strong> {{ appointment.dateTime | date: 'yyyy-MM-dd' }}</p>
+        <p><strong>Time:</strong> {{ appointment.dateTime | date: 'shortTime' }}</p>
+    </div>
+  </div>
+
+  <!-- Risk Factors and ACT Components -->
+  <div class="row mb-4">
+    <div class="card col-4">
+      <h4>Risk Factors</h4>
+      <app-risk-factor [patient]="appointment.patient"></app-risk-factor>
+    </div>
+    <div class="card col-4">
+      <h4>ACT Details</h4>
+      <app-act [appointmentId]="pageId"></app-act>
+    </div>
+  </div>
+
+  <!-- Act List -->
+  <div class="row mb-4">
+    <div class="card col-12">
+      <h4>Acts</h4>
+      <app-act-list *ngIf="appointment.acts" [actList]="appointment.acts"></app-act-list>
+      <p *ngIf="!appointment.acts || appointment.acts.length === 0">No acts available</p>
+    </div>
+  </div>
 </div>

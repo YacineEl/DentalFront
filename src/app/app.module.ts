@@ -9,7 +9,6 @@ import { provideAnimationsAsync } from '@angular/platform-browser/animations/asy
 import { PatientDetailsComponent } from './patient/patient-details/patient-details.component';
 import { AppointmentDetailsComponent } from './appointment/appointment-details/appointment-details.component';
 import { AppointmentItemComponent } from './appointment/appointment-item/appointment-item.component';
-import { AppointmentListComponent } from './appointment/appointment-list/appointment-list.component';
 import {PatientService} from "./service/patient.service";
 import {HttpClientModule} from "@angular/common/http";
 import { HeaderComponent } from './template/header/header.component';
@@ -32,7 +31,7 @@ import { PaymentListComponent } from './payment/payment-list/payment-list.compon
 import { CreatePaymentComponent } from './payment/create-payment/create-payment.component';
 import { PaymentDialogComponent } from './payment/payment-dialog/payment-dialog.component';
 import {MatDialogActions, MatDialogContent, MatDialogTitle} from "@angular/material/dialog";
-import {MatFormField} from "@angular/material/form-field";
+import {MatFormField, MatHint} from "@angular/material/form-field";
 import {MatLabel} from "@angular/material/form-field";
 import {MatInput} from "@angular/material/input";
 import {MatButton} from "@angular/material/button";
@@ -40,6 +39,13 @@ import {DataTablesModule} from "angular-datatables";
 import {AddAppointmentDialogComponent} from "./appointment/add-appontment-dialog/add-appointment-dialog.component";
 import {MatAutocomplete, MatAutocompleteTrigger, MatOption} from "@angular/material/autocomplete";
 import {MatDatepicker, MatDatepickerInput, MatDatepickerToggle} from "@angular/material/datepicker";
+import {MatNativeDateModule} from "@angular/material/core";
+import {NgxMatTimepickerModule} from "ngx-mat-timepicker";
+import {AppointmentsListComponent} from "./appointment/appointments-list/appointments-list.component";
+import { RiskFactorComponent } from './patient/risk-factor/risk-factor.component';
+import { ActComponent } from './appointment/act/act.component';
+import { ActListComponent } from './appointment/act-list/act-list.component';
+import {MatCard, MatCardContent, MatCardHeader, MatCardModule} from "@angular/material/card";
 
 @NgModule({
   declarations: [
@@ -49,7 +55,7 @@ import {MatDatepicker, MatDatepickerInput, MatDatepickerToggle} from "@angular/m
     PatientDetailsComponent,
     AppointmentDetailsComponent,
     AppointmentItemComponent,
-    AppointmentListComponent,
+    AppointmentsListComponent,
     HeaderComponent,
     SidebarComponent,
     FooterComponent,
@@ -65,7 +71,10 @@ import {MatDatepicker, MatDatepickerInput, MatDatepickerToggle} from "@angular/m
     PaymentListComponent,
     CreatePaymentComponent,
     PaymentDialogComponent,
-    AddAppointmentDialogComponent
+    AddAppointmentDialogComponent,
+    RiskFactorComponent,
+    ActComponent,
+    ActListComponent
   ],
   imports: [
     BrowserModule,
@@ -77,7 +86,10 @@ import {MatDatepicker, MatDatepickerInput, MatDatepickerToggle} from "@angular/m
     ReactiveFormsModule,
     ScheduleModule, RecurrenceEditorModule, MatDialogTitle, MatFormField, MatDialogActions, MatDialogContent, MatInput, MatButton,
     DataTablesModule,
-    MatLabel, MatAutocomplete, MatOption, MatDatepickerToggle, MatDatepicker, MatAutocompleteTrigger, MatDatepickerInput
+    MatLabel, MatAutocomplete, MatOption, MatDatepickerToggle, MatDatepicker, MatAutocompleteTrigger, MatDatepickerInput,
+    MatNativeDateModule,
+    MatHint,
+    NgxMatTimepickerModule, MatCard, MatCardHeader, MatCardContent, MatCardModule
   ],
   providers: [
     provideAnimationsAsync(),
