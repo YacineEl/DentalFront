@@ -1,0 +1,35 @@
+<div class="container mt-4">
+  <div class="row row-sm">
+    <div class="col-lg-12">
+      <div class="card">
+
+        <div class="card-header">
+          <h3 class="card-title">Appointments : {{formattedDate}}</h3>
+        </div>
+
+        <div class="card-body">
+          <div class="text-center mb-3">
+            <button class="btn btn-primary-light mb-3" (click)="OnAddAppointmentClick()">Add Appointment</button>
+          </div>
+          <div class="table-responsive">
+            <table class="table table-bordered text-nowrap border-bottom" id="basic-datatable">
+              <thead>
+              <tr>
+                <th class="wd-15p border-bottom-0">Patient Name</th>
+                <th class="wd-15p border-bottom-0">Date</th>
+                <th class="wd-15p border-bottom-0">Time</th>
+                <th class="wd-15p border-bottom-0">Actions</th>
+              </tr>
+              </thead>
+              <tbody>
+              <tr *ngFor="let appointment of appointments"
+                  app-appointment-item [appointment]="appointment"
+                  (updateAppointment)="appointmentToValidate($event)"></tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

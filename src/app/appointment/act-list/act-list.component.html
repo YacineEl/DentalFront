@@ -1,0 +1,21 @@
+<div class="act-list-container">
+  <h2>Act List</h2>
+
+  <!-- Show acts up to the number of numberActs -->
+  <div *ngFor="let act of actList.slice(0, numberActs)" class="act-item card">
+    <div class="row card-body">
+      <div class="col-3 act-title">
+        <p>{{ act.title }}</p>
+      </div>
+      <!-- Description on the right (half width) -->
+      <div class="col-9 act-description">
+        <p>{{ act.description }}</p>
+      </div>
+    </div>
+  </div>
+
+  <!-- Show 'Show More' button only if there are more acts -->
+  <div *ngIf="actList.length > numberActs" class="text-center show-more-btn">
+    <button class="btn btn-primary" (click)="numberActs = numberActs + 3">Show More</button>
+  </div>
+</div>

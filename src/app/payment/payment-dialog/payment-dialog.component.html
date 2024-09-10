@@ -1,0 +1,11 @@
+<h1 mat-dialog-title>Payment for {{data.appointment.patient?.firstName}} {{data.appointment.patient?.lastName}}</h1>
+<div mat-dialog-content>
+  <p>Please enter the payment amount:</p>
+  <mat-form-field>
+    <input matInput [(ngModel)]="paymentAmount" type="number" placeholder="Amount">
+  </mat-form-field>
+</div>
+<div mat-dialog-actions>
+  <button mat-button (click)="onCancel()">Cancel</button>
+  <button mat-button (click)="onConfirm()" cdkFocusInitial>Confirm</button>
+</div>

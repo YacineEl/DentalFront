@@ -1,0 +1,55 @@
+/* General Styles */
+body {
+  margin: 0;
+  font-family: Arial, sans-serif;
+}
+
+/* Layout Container Styles */
+.layout-container {
+  display: flex;
+  height: 100vh; /* Full viewport height */
+}
+
+/* Sidebar Styles */
+app-sidebar {
+  flex: 0 0 250px; /* Sidebar width */
+  background-color: #f8f9fa;
+  box-shadow: 2px 0 5px rgba(0,0,0,0.1);
+}
+
+/* Main Content Styles */
+.main-content {
+  flex: 1; /* Take the remaining width */
+  display: flex;
+  flex-direction: column;
+  background-color: #ffffff;
+}
+
+/* Dashboard Styles */
+app-dashboard {
+  flex: 1; /* Main content area grows to fill available space */
+  padding: 1rem;
+}
+
+/* Footer Styles */
+app-footer {
+  background-color: #f1f1f1;
+  padding: 1rem;
+  border-top: 1px solid #dee2e6;
+}
+
+/* Responsive Styles */
+@media (max-width: 768px) {
+  .layout-container {
+    flex-direction: column; /* Stack sidebar and main content vertically */
+  }
+
+  app-sidebar {
+    flex: none; /* Reset sidebar width */
+    width: 100%; /* Full width on smaller screens */
+  }
+
+  .main-content {
+    margin-top: 60px; /* Space for collapsed sidebar toggle if needed */
+  }
+}

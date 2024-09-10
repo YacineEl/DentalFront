@@ -1,0 +1,137 @@
+/* Container Styles */
+.container {
+  max-width: 600px;
+  margin: 0 auto;
+  padding: 20px;
+  background-color: #f0f0f0;
+  border-radius: 8px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+}
+
+/* Heading Styles */
+h3 {
+  text-align: center;
+  font-size: 24px;
+  color: #333;
+  margin-bottom: 20px;
+}
+
+/* Form Check Styling */
+.form-check {
+  margin-bottom: 12px;
+  display: flex;
+  align-items: center;
+}
+
+.form-check-input {
+  width: 18px;
+  height: 18px;
+  margin-right: 10px;
+}
+
+.form-check-label {
+  font-size: 16px;
+  color: #555;
+}
+
+/* Button Styling */
+button {
+  width: 100%;
+  padding: 10px;
+  font-size: 16px;
+  border-radius: 4px;
+  transition: background-color 0.3s;
+}
+
+button.btn-primary {
+  background-color: #007bff;
+  border: none;
+  color: #fff;
+}
+
+button.btn-primary:hover {
+  background-color: #0056b3;
+}
+
+/* Margin Utilities */
+.mt-3 {
+  margin-top: 1rem;
+}
+
+/* New Risk Factor Section */
+div:last-child {
+  display: flex;
+  align-items: center;
+  margin-top: 20px;
+}
+
+label[for="newRisk"] {
+  font-weight: bold;
+  margin-right: 10px;
+  margin-top: 5px;
+}
+
+#newRisk {
+  flex: 1;
+  padding: 6px;
+  border-radius: 4px;
+  border: 1px solid #ccc;
+}
+
+#newRisk::placeholder {
+  font-style: italic;
+  color: #aaa;
+}
+
+/* Focus and Hover States */
+input:focus {
+  outline: none;
+  box-shadow: 0 0 5px #007bff;
+}
+
+input:hover {
+  border-color: #007bff;
+}
+
+.btn-success-light{
+  color: #50d24c !important;
+  background: #d0f7d1 !important;
+  border-color: #d4f7d0;
+}
+.btn-success-light:hover{
+  color: #fff !important;
+  background-color: #5cf245 !important;
+  border-color: #56f245;
+}
+.btn-success-light:focus,
+.btn-success-light.focus{
+  box-shadow: 0 0 0 2px rgb(59, 248, 7);
+
+}
+.btn-info-light {
+  color: #4c81d2 !important;
+  background: #d0e2f7 !important;
+  border-color: #d0e2f7;
+}
+.btn-info-light:hover {
+  color: #fff !important;
+  background-color: #45aaf2 !important;
+  border-color: #45aaf2;
+}
+
+.btn-info-light:focus,
+.btn-info-light.focus {
+  box-shadow: 0 0 0 2px rgba(7, 116, 248, 0.9);
+}
+.form-check-input {
+  margin-right: 10px;
+}
+
+.mt-3 {
+  margin-top: 1rem;
+}
+
+.btn-sm {
+  padding: 5px 10px;
+}
+

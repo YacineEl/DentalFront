@@ -1,0 +1,26 @@
+<h3>Risk Factors</h3>
+<form>
+  <div *ngFor="let risk of riskFactors" class="form-check">
+    <input class="form-check-input"
+           type="checkbox"
+           [checked]="risk.selected"
+           (change)="onRiskChange(risk, $event)"
+           id="risk-{{ risk.id }}"/>
+    <label class="form-check-label" for="risk-{{ risk.id }}">
+      {{ risk.description }}
+    </label>
+  </div>
+
+  <button class="btn btn-success-light" (click)="updatePatientRisks()">Update Risks</button>
+</form>
+
+<!-- Add new risk factor section -->
+<div class="row align-items-center">
+  <label for="newRisk" class="col-3">Add New Risk Factor:</label>
+  <div class="col-5">
+    <input id="newRisk" class="form-control" [(ngModel)]="newRiskDescription" placeholder="New risk description">
+  </div>
+  <div class="col-3">
+    <button class="btn btn-info-light btn-sm float-end" (click)="addRiskFactor()">Add</button>
+  </div>
+</div>

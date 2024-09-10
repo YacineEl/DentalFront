@@ -1,0 +1,40 @@
+.act-container {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  background-color: #f9f9f9; /* Same color as background */
+  padding: 20px;
+  border-radius: 10px;
+}
+
+.full-width {
+  width: 100%;
+}
+
+mat-form-field {
+  background-color: #ffffff; /* Minimalist white input background */
+  border-radius: 5px;
+  box-shadow: 0px 1px 3px rgba(0, 0, 0, 0.1);
+}
+
+mat-form-field .mat-input-element {
+  border: none;
+  border-bottom: 2px solid #ccc; /* Subtle border */
+  border-radius: 5px;
+  padding: 10px;
+  font-size: 16px;
+}
+
+textarea.mat-input-element {
+  resize: none;
+}
+
+button {
+  align-self: flex-start;
+}
+
+button[mat-raised-button] {
+  border-radius: 5px;
+  padding: 10px 20px;
+  font-size: 16px;
+}

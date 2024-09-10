@@ -1,0 +1,31 @@
+/* layout.component.css */
+.layout-container {
+  display: flex;
+  height: 100vh; /* Full viewport height */
+}
+
+app-sidebar {
+  flex: 0 0 250px; /* Sidebar width */
+  background-color: #f8f9fa;
+  box-shadow: 2px 0 5px rgba(0,0,0,0.1);
+}
+
+.main-content {
+  flex: 1; /* Take the remaining width */
+  display: flex;
+  flex-direction: column;
+  background-color: #ffffff;
+  padding: 1rem;
+}
+
+/* Responsive Styles */
+@media (max-width: 768px) {
+  .layout-container {
+    flex-direction: column; /* Stack sidebar and main content vertically */
+  }
+
+  app-sidebar {
+    flex: none; /* Reset sidebar width */
+    width: 100%; /* Full width on smaller screens */
+  }
+}

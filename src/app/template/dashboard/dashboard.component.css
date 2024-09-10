@@ -1,0 +1,29 @@
+.card-body {
+  -ms-flex: 1 1 auto;
+  flex: 1 1 auto;
+  padding: 25px;
+  margin: 0;
+  position: relative;
+}
+
+
+.card-body+.card-body {
+  border-top: 1px solid #eaedf1;
+}
+
+.card-body> :last-child {
+  margin-bottom: 0;
+}
+
+@media print {
+  .card-body {
+    padding: 0;
+  }
+}
+
+.card-body-scrollable {
+  overflow: auto;
+}
+.overflow-hidden {
+  overflow: hidden;
+}

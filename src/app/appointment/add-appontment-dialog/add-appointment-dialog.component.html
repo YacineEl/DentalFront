@@ -1,0 +1,35 @@
+<h1 mat-dialog-title>Add Appointment</h1>
+<div mat-dialog-content>
+  <form [formGroup]="appointmentForm">
+    <mat-form-field>
+      <mat-label>Patient Name</mat-label>
+      <input type="text" matInput [matAutocomplete]="auto" formControlName="patient" (input)="onPatientInput()"/>
+      <mat-autocomplete #auto="matAutocomplete" [displayWith]="displayPatientName">
+        <mat-option *ngFor="let patient of filteredPatients" [value]="patient">
+          {{ patient.firstName }} {{ patient.lastName }}
+        </mat-option>
+      </mat-autocomplete>
+    </mat-form-field>
+
+    <!-- Date input -->
+    <mat-form-field>
+      <mat-label>Date</mat-label>
+      <input type="date" matInput [matDatepicker]="picker" formControlName="date" />
+      <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
+      <mat-datepicker #picker></mat-datepicker>
+    </mat-form-field>
+
+    <!-- Time input -->
+<!--    <mat-form-field>-->
+<!--      <mat-label>Time</mat-label>-->
+<!--      <input matInput [ngxMatTimepicker]="timePicker" formControlName="time" readonly>-->
+<!--      <mat-datepicker-toggle matSuffix [for]="timePicker"></mat-datepicker-toggle>-->
+<!--      <ngx-mat-timepicker #timePicker></ngx-mat-timepicker>-->
+<!--    </mat-form-field>-->
+
+  </form>
+</div>
+<div mat-dialog-actions>
+  <button mat-button (click)="onCancel()">Cancel</button>
+  <button mat-button (click)="onConfirm()" cdkFocusInitial>Confirm</button>
+</div>

@@ -1,0 +1,23 @@
+<app-act-list [actList]="acts"></app-act-list>
+
+<div class="act-container">
+  <!-- Single input for Act Title and Description -->
+  <mat-form-field class="full-width">
+    <mat-label>Select or Add Act Title</mat-label>
+    <input matInput [formControl]="titleControl" [matAutocomplete]="auto" placeholder="Type to search or add act title">
+    <mat-autocomplete #auto="matAutocomplete">
+      <mat-option *ngFor="let title of filteredTitles | async" [value]="title.title">
+        {{ title.title }}
+      </mat-option>
+    </mat-autocomplete>
+  </mat-form-field>
+
+  <!-- Textarea for Act Description -->
+  <mat-form-field class="full-width">
+    <mat-label>Act Description</mat-label>
+    <textarea matInput [(ngModel)]="description" placeholder="Enter description"></textarea>
+  </mat-form-field>
+
+  <!-- Button to add the act -->
+  <button mat-raised-button color="primary" (click)="addAct()">Add Act</button>
+</div>
